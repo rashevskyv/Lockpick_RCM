@@ -187,14 +187,6 @@ void launch_tools()
 				ments[i_off].data = "sd:/atmosphere/reboot_payload.bin";
 				i_off++;
 			}
-			if (!f_stat("sd:/ReiNX.bin", NULL))
-			{
-				ments[i_off].type = INI_CHOICE;
-				ments[i_off].caption = "ReiNX.bin";
-				ments[i_off].color = colors[(color_idx++) % 6];
-				ments[i_off].data = "sd:/ReiNX.bin";
-				i_off++;
-			}
 
 			while (true)
 			{
@@ -284,8 +276,7 @@ ment_t ment_top[] = {
 	MDEF_CAPTION("---------------", COLOR_YELLOW),
 	MDEF_HANDLER("Payloads...", launch_tools, COLOR_GREEN),
 	MDEF_CAPTION("---------------", COLOR_BLUE),
-	MDEF_HANDLER("Reboot (Normal)", reboot_normal, COLOR_VIOLET),
-	MDEF_HANDLER("Reboot (RCM)", reboot_rcm, COLOR_RED),
+	MDEF_HANDLER("Reboot to hekate", reboot_normal, COLOR_VIOLET),
 	MDEF_HANDLER("Power off", power_off, COLOR_ORANGE),
 	MDEF_END()
 };

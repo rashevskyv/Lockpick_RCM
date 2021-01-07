@@ -134,10 +134,7 @@ void panic(u32 val)
 
 void reboot_normal()
 {
-	sd_end();
-	hw_reinit_workaround(false, 0);
-
-	panic(0x21); // Bypass fuse programming in package1.
+	launch_payload('sd:/payload.bin');
 }
 
 void reboot_rcm()
