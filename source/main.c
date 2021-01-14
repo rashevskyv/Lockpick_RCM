@@ -276,7 +276,7 @@ ment_t ment_top[] = {
 	MDEF_CAPTION("---------------", COLOR_YELLOW),
 	MDEF_HANDLER("Payloads...", launch_tools, COLOR_GREEN),
 	MDEF_CAPTION("---------------", COLOR_BLUE),
-	MDEF_HANDLER("Reboot to hekate", reboot_normal, COLOR_VIOLET),
+	MDEF_HANDLER("Reboot to hekate", reboot_hekate, COLOR_VIOLET),
 	MDEF_HANDLER("Power off", power_off, COLOR_ORANGE),
 	MDEF_END()
 };
@@ -376,14 +376,6 @@ void ipl_main()
 		ment_top[1].type = MENT_CAPTION;
 		ment_top[1].color = 0xFF555555;
 		ment_top[1].handler = NULL;
-	}
-
-	// Grey out reboot to RCM option if on Mariko or patched console.
-	if (h_cfg.t210b01 || h_cfg.rcm_patched)
-	{
-		ment_top[6].type = MENT_CAPTION;
-		ment_top[6].color = 0xFF555555;
-		ment_top[6].handler = NULL;
 	}
 
 	if (h_cfg.rcm_patched)

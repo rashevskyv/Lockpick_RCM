@@ -71,7 +71,7 @@ u32 get_tmr_s();
 void usleep(u32 us);
 void msleep(u32 ms);
 void panic(u32 val);
-void reboot_normal();
+void reboot_hekate();
 void reboot_full();
 void power_off();
 void exec_cfg(u32 *base, const cfg_op_t *ops, u32 num_ops);

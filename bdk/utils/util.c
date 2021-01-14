@@ -132,9 +132,9 @@ void panic(u32 val)
 		usleep(1);
 }
 
-void reboot_normal()
+void reboot_hekate()
 {
-	launch_payload('sd:/payload.bin');
+	launch_payload("sd:/payload.bin");
 }
 
 void reboot_rcm()
